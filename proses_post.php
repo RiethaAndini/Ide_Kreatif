@@ -131,8 +131,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
             'message' => 'Gagal memperbarui postingan.'
         ];
     }
-}
 
 // Arahkan ke halaman dashboard
 header('Location: dashboard.php');
 exit();
+}
