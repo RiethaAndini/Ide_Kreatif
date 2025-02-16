@@ -5,8 +5,18 @@
   if ($notification) {
     unset($_SESSION['notification']);
   }
-
+  /*
+  jika user sudah login sesuai dengan username atau role maka akan diarakan ke URL: dasboard.php
+  */
+  if (isset($_SESSION["username"]) || isset($_SESSION["role"])) {
+    $_SESSION['notification'] = [
+      'type' => 'danger',
+      'massage' => 'silahkan logout terlebih dahulu!'
+    ];
+    header('Location:  ../dashboard.php');
+  }
   ?>
+  
 <!DOCTYPE html>
 <html lang="en">
   <head>
